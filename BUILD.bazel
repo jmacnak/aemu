@@ -1,0 +1,19 @@
+load("@rules_license//rules:license.bzl", "license")
+
+package(
+    default_applicable_licenses = [":license"],
+    default_visibility = ["//visibility:public"],
+)
+
+license(
+    name = "license",
+    license_kinds = [
+        "@rules_license//licenses/spdx:Apache-2.0",
+    ],
+    visibility = [":__subpackages__"],
+)
+
+alias(
+    name = "aemu-host-common-test-headers",
+    actual = "//host-common:test-headers",
+)
